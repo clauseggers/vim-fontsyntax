@@ -1,0 +1,119 @@
+languagesystem DFLT dflt;
+languagesystem dev2 dflt;
+
+@Uppercase = [A Aacute Abreve Acircumflex Adieresis Agrave Amacron Aogonek Aring Atilde AE B C Cacute Ccaron Ccedilla Cdotaccent D Eth Dcaron Dcroat E Eacute Ecaron Ecircumflex Edieresis];
+
+feature abvs {
+	script dev2;
+	lookup Abvs1_devanagari {
+		sub eShortMatra-deva eCandraMatra-deva by eShortMatra_eCandraMatra-deva;
+		sub eShortMatra-deva candraBindu-deva by eShortMatra_candraBindu-deva;
+	} Abvs1_devanagari;
+	language MAR;
+	lookup Abvs1_devanagari;
+	language SAN;
+	lookup Abvs1_devanagari;
+} abvs ;
+
+feature kern {
+	lookup kern1_latin { #Yay! Comments!
+		pos F AE -140;
+		pos T AE -140;
+		subtable; # after category
+		pos @MMK_L_Five-roman Hundred-roman -40;
+		pos @MMK_L_Ten-roman Hundred-roman -40;
+		pos Fifty-roman @MMK_R_Five-roman -110;
+		pos Fivehundred-roman @MMK_R_Five-roman -40;
+	} lookup;
+} kern ;
+
+feature cpsp {
+	pos @Uppercase <120 0 120 0>;
+	pos @Space <240 0 240 0>;
+} cpsp ;
+
+feature dlig {
+	sub T h by T_h;
+# sub kappa alpha iota by kaiSymbol;
+# sub Kappa Alpha Iota by KaiSymbol;
+
+	lookup kaiSymbol {
+		ignore sub kappa' alpha' iota' @AnyGreek;
+		ignore sub @AnyGreek kappa' alpha' iota';
+		sub kappa' alpha' iota' by kaiSymbol;
+	} kaiSymbol;
+
+	lookup KaiSymbol {
+		ignore sub Kappa' [Alpha alpha]' [Iota iota]' @AnyGreek;
+		ignore sub [Kappa kappa]' Alpha' [Iota iota]' @AnyGreek;
+		ignore sub [Kappa kappa]' [Alpha alpha]' Iota' @AnyGreek;
+		ignore sub @AnyGreek Kappa' [Alpha alpha]' [Iota iota]';
+		ignore sub @AnyGreek [Kappa kappa]' Alpha' [Iota iota]';
+		ignore sub @AnyGreek [Kappa kappa]' [Alpha alpha]' Iota';
+		sub Kappa' [Alpha alpha]' [Iota iota]' by KaiSymbol;
+		sub [Kappa kappa]' Alpha' [Iota iota]' by KaiSymbol;
+		sub [Kappa kappa]' [Alpha alpha]' Iota' by KaiSymbol;
+	} KaiSymbol;
+} dlig ;
+
+markClass [commaaccent] <anchor -210 0> @mark_bottom;
+markClass [uMatra-deva] <anchor -319 0> @mark_bottom;
+
+feature abvm {
+	pos base [aShort-deva]  <anchor 824 1042> mark @mark_anusvara <anchor 704 1141> mark @mark_left <anchor 824 786> mark @mark_top;
+	pos base [aShort-deva.ss11]  <anchor 841 1042> mark @mark_anusvara <anchor 721 1141> mark @mark_left <anchor 841 786> mark @mark_top;
+} abvm;
+
+feature dist {
+	lookup dist1_devanagari {
+		script dev2;
+		lookupflag IgnoreMarks;
+		pos tta-deva lVocalic-deva -70;
+		pos tta-deva llVocalic-deva -70;
+		subtable;
+		pos @MMK_L_aaMatra-deva @MMK_R_pa-deva 55;
+		pos @MMK_L_aaMatra-deva @MMK_R_ya-deva.connect-low -40;
+		pos @MMK_L_dda-deva ya-deva.connect -80;
+		subtable;
+		pos zerowidthnonjoiner @MMK_R_ya-deva -60;
+		subtable;
+	} dist1_devanagari;
+	language MAR;
+	lookup dist1_devanagari;
+	script deva;
+	lookup dist1_devanagari;
+	language MAR;
+} dist;
+
+table OS/2 {
+	TypoAscender 1703;
+	TypoDescender -876;
+	TypoLineGap 0;
+	winAscent 1703;
+	winDescent 876;
+	WeightClass 300;
+	WidthClass 5;
+	WidthClass 5;
+	FSType 8;
+	XHeight 531;
+	CapHeight 786;
+	Vendor "FTH ";
+} OS/2;
+
+table hhea {
+	CaretOffset 0;
+	Ascender 1703;
+	Descender -876;
+	LineGap 0;
+} hhea;
+
+table head { 
+	FontRevision 001.002;
+} head;
+
+table name {
+	nameid 0 1 "Copyright (c) 1469 by Nicolas Jensen.";
+	nameid 1 1 "Inknut Antiqua";
+	nameid 1 3 1 1033 "Inknut Antiqua Light";
+	nameid 10 1 "\C8Inknut Antiqua\C7 is an Antiqua typeface for literature and long-form text. It is designed to evoke Venetian incunabula and humanist manuscripts. It comes with a complement of typographical sorts and OpenType features for the purpose. The proportions of Inknut Antiqua make it well suited for low-resolution screens.";
+} name;
