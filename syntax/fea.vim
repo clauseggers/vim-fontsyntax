@@ -45,6 +45,7 @@ syntax keyword feaReserved contained anchorDef anonymous anon by contour cursive
 " Special highlighting for the single-quote
 syntax match feaReservedSingleQuote "\>'"
 syntax match feaReservedSingleQuote "' "
+syntax match feaReservedSingleQuote "';"
 
 
 " COMMON FEATURE KEYWORDS AND STRUCTURES
