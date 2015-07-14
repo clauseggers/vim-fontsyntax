@@ -1,6 +1,6 @@
 # Font syntax files for Vim
 
-This is [Vim](http://www.vim.org) syntax description files for various font development source formats.
+These are [Vim](http://www.vim.org) syntax description files for various font development source formats.
 
 ![OpenType Feature-file in Vim](https://rawgithub.com/clauseggers/vim-fontsyntax/master/images/screenshot.png)
 
