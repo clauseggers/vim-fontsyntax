@@ -21,8 +21,11 @@ If you make useful extensions on these files, please send a pull request to this
 
 ### Installation
 1) Clone or download these files.
+
 2) Copy or link the files in the `syntax` folder to `~/.vim/syntax/` on UNIX systems, or to `$HOME/vimfiles/syntax/` on Windows systems.
+
 3) Copy or link the files in the `ftdetect` folder to `~/.vim/ftdetect/` on UNIX systems, or to `$HOME/vimfiles/ftdetect/` on Windows systems.
+
 4) Start or re-start Vim.
 
 In the folder `sample_feature_file` exists a sample Feature-file.
