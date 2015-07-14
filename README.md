@@ -8,7 +8,7 @@ The supported formats are [UFO](http://unifiedfontobject.org) (XML), [TTX](https
 
 As for the UFO, the supplied Vim syntax file is for the `foo.glif` files.
 
-The `glif.vim` file is not strictly speaking necessary since the content of glif-files is XML, and Vim will automatically detect this, but it is included here for completeness The `glif.vim` simply contains a command to set the filetype to XML.
+The `glif.vim` file is not strictly speaking necessary since the content of glif-files is XML, and Vim will automatically detect this, but it is included here for completeness. The `glif.vim` simply contains a command to set the filetype to XML.
 
 The `ttx.vim` file contain commands to set the syntax to XML and Assembly. If you need more specific Assembly highlighting you can add it to this file.
 
