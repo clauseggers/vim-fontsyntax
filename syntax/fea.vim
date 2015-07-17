@@ -71,7 +71,7 @@ syntax region feaMarkClass start="\<markClass" end="\ze;" skipwhite contains=fea
 
 " INTEGERS
 " First find zeros (Must not have preceding minus nor zero).
-syntax match feaInteger "\(\.\@<!\a\@<!\)\(-0.*\)\@<!\(0\{1}\)\>" contained
+syntax match feaInteger "\(\.\@<!\a\@<!\d\@<!-\@<!\)\(0\{1}\)\>" contained
 " Then find other positive and negative integers
 syntax match feaInteger "\(\.\@<!\w\@<!\)\(-\?[1-9]\+[0-9]*\)" contained
 
