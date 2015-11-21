@@ -106,7 +106,7 @@ syntax match feaFeature "\<feature" nextgroup=feaTag skipwhite
 " Registered GSUB and/or GPOS OpenType feature tags
 syntax case ignore
 syntax keyword feaTag contained aalt abvf abvm abvs afrc akhn blwf blwm blws calt case ccmp cfar cjct clig cpct cpsp cswh curs c2pc c2sc dist dlig dnom dtls expt falt fin2 fin3 fina flac frac fwid half haln halt hist hkna hlig hngl hojo hwid init isol ital jalt jp78 jp83 jp90 jp04 kern lfbd liga ljmo lnum locl ltra ltrm mark med2 medi mgrk mkmk mset nalt nlck nukt numr onum opbd ordn ornm palt pcap pkna pnum pref pres pstf psts pwid qwid rand rclt rkrf rlig rphf rtbd rtla rtlm ruby salt sinf size smcp smpl ssty stch subs sups swsh titl tjmo tnam tnum trad twid unic valt vatu vert vhal vjmo vkna vkrn vpal vrt2 zero 
-syntax match feaTag "\(cv[0-9]1\)\|\(cv[1-9][0-9]\)" contained
+syntax match feaTag "\(cv[0-9][1-9]\)\|\(cv[1-9][0-9]\)" contained
 syntax match feaTag "\(ss0[1-9]\)\|\(ss1[0-9]\)\|ss20" contained
 
 " Features
